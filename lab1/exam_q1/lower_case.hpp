@@ -1,7 +1,10 @@
 #ifndef lower_case_hpp
 #define lower_case_hpp
 
+#include <iostream>
 #include <string>
+#include <cctype>
+#include <algorithm> 
 
 using namespace std;
 

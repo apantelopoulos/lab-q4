@@ -4,6 +4,8 @@
 #include <vector>
 #include <string>
 #include <utility>
+#include <map>
+
 
 using namespace std;
 
@@ -18,5 +20,9 @@ void histogram_add(vector<pair<string,int>> &counts, const string &word);
     If word does not exist, return a count of 0.
 */
 int histogram_get_count(const vector<pair<string,int>> &counts, const string &word);
+
+
+void histogram_add(map<string,int> &counts, const string &word);
+
 
 #endif
