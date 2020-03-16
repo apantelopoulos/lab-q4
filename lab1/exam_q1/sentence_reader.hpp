@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <sstream>
 
 using namespace std;
 
@@ -30,3 +31,29 @@ public:
 };
 
 #endif
+
+
+
+/*
+vector<string> next(){
+
+vector<string> res;
+char a;
+
+string y;
+y.append(src.get())
+
+while(src.peek()!=0 && !isspace(src.peek())){
+
+a.begin = src.get();
+
+
+
+}
+
+*/
+
+
+
+
+
