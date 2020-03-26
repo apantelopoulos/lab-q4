@@ -18,6 +18,8 @@ return count;
 
 }
 
+//////////////////////////////////////////////////////////
+
 vector<int> bit_flip_positions_in_vector(const vector<bool> &a, const vector<bool> &b)
 {
 
@@ -33,10 +35,47 @@ for(int i=0; i<a.size(); i++){
 return indices;
 }
 
+/////////////////////////////////////////////////////////
+
 vector<bool> read_bit_vector(istream &src)
 {
-    // TODO
+
+vector <string> x;
+char temp;
+string tempp;
+while(cin){
+
+temp = src.get();
+tempp = temp;
+if(tempp=="0" | tempp=="1"){
+x.push_back(tempp);
 }
+tempp = "";
+}
+/*
+vector <int> y;
+for(int i=0; i<x.size(); i++){
+
+	y.push_back(stoi(x[i]));
+}
+*/
+vector <bool> z;
+for(int j=0; j<x.size(); j++){
+
+	if(x[j]=="0"){
+		z.push_back(false);
+	}
+	else{
+		z.push_back(true);
+	}
+
+}
+return z;
+
+}
+
+
+///////////////////////////////////////////////////////
 
 void write_bits_in_word(uint64_t x, int w, ostream &dst)
 {
