@@ -9,7 +9,7 @@ int main(int argc, char **argv){
 	double clock_rate;
 	double energy_per_flip;
 	string arg;
-	if(argc == 1){
+	if(argc < 3){
 		clock_rate = 100e6;
 		energy_per_flip = 1e-12;
 	}
