@@ -79,5 +79,14 @@ return z;
 
 void write_bits_in_word(uint64_t x, int w, ostream &dst)
 {
-    // TODO
+int temp;
+for(int i=0; i<w; i++){
+
+	temp = x%2;
+	dst << temp;
+	x=x/2;
+}
+
+
+
 }
