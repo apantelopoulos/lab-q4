@@ -50,7 +50,15 @@ tempp = temp;
 if(tempp=="0" | tempp=="1"){
 x.push_back(tempp);
 }
+if(temp == '\n'){break;}
+
 tempp = "";
+
+
+
+
+
+
 }
 /*
 vector <int> y;
