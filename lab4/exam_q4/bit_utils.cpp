@@ -53,12 +53,6 @@ x.push_back(tempp);
 if(temp == '\n'){break;}
 
 tempp = "";
-
-
-
-
-
-
 }
 /*
 vector <int> y;
