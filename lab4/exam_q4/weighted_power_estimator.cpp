@@ -3,6 +3,8 @@
 #include <string>
 #include "bit_utils.hpp"
 #include <cassert>
+#include <string>
+#include <fstream>
 
 using namespace std;
 
@@ -14,12 +16,24 @@ int main(int argc, char **argv){
 	arg = argv[1];
 	clock_rate = stod(arg);
 	arg = argv[2];
-	energy_per_flip = stod(arg);
+//	energy_per_flip = stod(arg);
 
 	assert(clock_rate != 0);
-	assert(energy_per_flip != 0);
+//	assert(energy_per_flip != 0);
 
 //	cout << clock_rate << " " << energy_per_flip <<endl;
+
+vector <double> e;
+string line;
+ifstream myfile(arg);
+if(myfile.is_open()){
+	while(getline(myfile,line)){
+		e.push_back(stod(line));
+	}
+	myfile.close();
+}
+
+/////////////////////////////////////////////////////////////////////////////
 
 vector <vector<bool>> lines;
 vector <bool> temp = read_bit_vector(cin);
@@ -48,12 +62,13 @@ int cycles = lines.size();
 
 int signals = lines[0].size();
 
+/*
 vector <double> e;
 e.resize(signals);
 for(int a =0; a<signals; a++){
 	e[a] = energy_per_flip*(a+1);
 }
-
+*/
 
 vector <int> flips_for;
 int flips = 0;
