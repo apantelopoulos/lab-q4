@@ -14,9 +14,17 @@ void RowSet::SubBuffer(int r, int c)
 
 void RowSet::DivBuffer(int r, int c)
 {
-    InvBuffer();
-    MulBuffer(r,c);
-    InvBuffer();
+  SwapBuffer(r,c);
+  bool a=IsZero(r,c);
+  SwapBuffer(r,c);
+
+  if(a){
+      //0/0
+  }else{
+      InvBuffer();
+      MulBuffer(r,c);
+      InvBuffer();
+  }
 }
 
 void RowSet::ToReducedRowEchelonForm()
