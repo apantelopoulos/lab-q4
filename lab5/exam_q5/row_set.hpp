@@ -47,7 +47,7 @@ public:
 
     // Return true if A[r,c]==1
     virtual bool IsUnit(int r, int c) const=0;
-    
+
     // Return true if A[r,c]==0
     virtual bool IsZero(int r, int c) const=0;
 
@@ -62,7 +62,7 @@ public:
     // A[row] += A[src_row] * B
     virtual void AddMultipleOfRow(int row, int src_row) =0;
 
-    
+
     ////////////////////////////////////////
     // Buffer operations
 
@@ -84,7 +84,7 @@ public:
     // B = B * A[r,c]
     virtual void MulBuffer(int r, int c) =0;
 
-    // B = B * A[r,c]
+    // B = B + A[r,c]
     virtual void AddBuffer(int r, int c) =0;
 
     // B = - B
@@ -133,7 +133,7 @@ public:
     // and one character per column.
     // For a given value x, the value should be:
     // ' ' - Zero entry.
-    // '1' - One entry. 
+    // '1' - One entry.
     // 'X' - Anything else.
     void ShowSparsity(ostream &dst);
 
