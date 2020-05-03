@@ -17,6 +17,15 @@ int main(int argc, char *argv[])
     // in addition to the buffer
     A->Resize(1,1);
 
+	A->UnitBuffer();
+
+	A->AddBuffer(1,1);
+
+	A->WriteBuffer(cout);
+
+
+
+
     /////////////////////////////////////////
     // Insert tests here
 

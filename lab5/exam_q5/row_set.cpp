@@ -1,18 +1,21 @@
 #include "row_set.hpp"
+#include <iostream>
+
+using namespace std;
 
 #include "row_echelon_form.hpp"
 
 void RowSet::SubBuffer(int r, int c)
 {
     NegBuffer();
-    AddBuffer(int r, int c);
+    AddBuffer(r,c);
     NegBuffer();
 }
 
 void RowSet::DivBuffer(int r, int c)
 {
     InvBuffer();
-    MulBuffer(int r, int c);
+    MulBuffer(r,c);
     InvBuffer();
 }
 
@@ -24,10 +27,10 @@ void RowSet::ToReducedRowEchelonForm()
 void RowSet::ShowSparsity(ostream &dst)
 {
   for(int r=1;r<=RowCount(); r++){
-      for(int c=1; i<ColCount()+1;i++){
-          if(A[r,c]==0){dst << " " << " "}
-          elseif(A[r,c]==1){dst << "1" << " "}
-          else{dst << "X" << " "}
+      for(int c=1; c<ColCount()+1;c++){
+          if(IsZero(r,c)){dst << " " << " ";}
+          else if(IsUnit(r,c)){dst << "1" << " ";}
+          else{dst << "X" << " ";}
       }
       dst << endl;
   }
@@ -36,9 +39,9 @@ void RowSet::ShowSparsity(ostream &dst)
 
 void RowSet::WriteRow(int row, ostream &dst)
 {
-    for(int c=1; i<ColCount()+1;i++){
-
-        dst << A[row,c] << " "
+    for(int c=1; c<ColCount()+1;c++){
+	LoadBuffer(row,c);
+        WriteBuffer(cout);
 
     }
 }
